@@ -1397,15 +1397,17 @@ function propagate(key, value) {
   const f = SHARED_FIELDS[key];
   if (!f) return;
   const v = parseFloat(value) || 0;
+  const activeEl = document.activeElement; // 현재 사용자가 입력 중인 필드
   f.rangeIds.forEach((rangeId, i) => {
     const rangeEl = document.getElementById(rangeId);
     if (!rangeEl) return;
     rangeEl.value = v;
     const clamped = +rangeEl.value; // 브라우저가 min/max로 자동 클리핑한 실제값
     const numEl = document.getElementById(f.numIds[i]);
-    if (numEl) numEl.value = clamped;
+    // 현재 입력 중인 필드는 덮어쓰지 않음 (타이핑 방해 방지)
+    if (numEl && numEl !== activeEl) numEl.value = clamped;
     const lblEl = document.getElementById(f.lblIds[i]);
-    if (lblEl) lblEl.textContent = clamped + f.unit;
+    if (lblEl) lblEl.textContent = fmtLbl(clamped, f.unit);
   });
 }
 function selISAPeriod(btn) {
