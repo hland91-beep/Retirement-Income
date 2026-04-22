@@ -97,7 +97,7 @@ input[type="number"]:focus,select:focus{border-color:var(--primary);box-shadow:0
 .result-box.orange{border-left-color:var(--warn)}
 .result-box.red{border-left-color:var(--danger)}
 .result-box.purple{border-left-color:var(--pension)}
-.result-box-label{font-size:.72rem;color:var(--g500);font-weight:600;margin-bottom:3px;text-transform:uppercase;letter-spacing:.3px}
+.result-box-label{font-size:.75rem;color:var(--g500);font-weight:700;margin-bottom:4px;letter-spacing:.1px}
 .result-box-value{font-size:1.2rem;font-weight:800;color:var(--g900);line-height:1.2}
 .result-box-sub{font-size:.7rem;color:var(--g500);margin-top:2px}
 
@@ -157,7 +157,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
 .badge-pension{background:var(--pension-l);color:var(--pension)}
 .badge-irp{background:var(--irp-l);color:#0284c7}
 .badge-isa{background:var(--isa-l);color:#059669}
-.acc-body{padding:0 18px 18px;border-top:1px solid var(--g100)}
+.acc-body{padding:14px 18px 18px;border-top:1px solid var(--g100)}
 .acc-body.hidden{display:none}
 
 /* ── SEG BUTTONS ── */
@@ -166,7 +166,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
 .seg-btn.on{background:var(--pension);color:#fff;font-weight:700}
 
 /* ── INFO BOX ── */
-.info-box{background:#eff6ff;border-left:3px solid #93c5fd;padding:9px 12px;border-radius:0 8px 8px 0;font-size:.75rem;color:#1e40af;margin-top:10px;line-height:1.6}
+.info-box{background:#eff6ff;border-left:3px solid #93c5fd;padding:9px 12px;border-radius:0 8px 8px 0;font-size:.75rem;color:#1e40af;margin-top:12px;line-height:1.6}
 .info-box-g{background:var(--isa-l);border-left-color:var(--isa);color:#065f46}
 .info-box-y{background:var(--warn-l);border-left-color:var(--warn);color:#92400e}
 
@@ -177,6 +177,18 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
 .tax-total .tv{color:var(--warn);font-weight:800}
 .tx-lbl{color:var(--g500);font-size:.8rem}
 .tx-val{font-weight:600}
+
+/* ── 원금/수익 분석 테이블 ── */
+.prin-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.prin-table th{background:var(--g50);color:var(--g500);font-weight:700;padding:6px 8px;text-align:right;border-bottom:2px solid var(--g200);white-space:nowrap}
+.prin-table th:first-child{text-align:left}
+.prin-table td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--g100);vertical-align:middle}
+.prin-table td:first-child{text-align:left;font-weight:600;color:var(--g700)}
+.prin-table tr.total-row td{border-top:2px solid var(--g200);border-bottom:none;font-weight:700;background:var(--g50)}
+.prin-table tr.total-row td:first-child{color:var(--g900)}
+.ret-pct{font-weight:700;padding:2px 6px;border-radius:5px;font-size:.75rem}
+.ret-pos{background:var(--success-l);color:var(--success)}
+.ret-neg{background:var(--danger-l);color:var(--danger)}
 
 /* ── TAX REFERENCE (Tab 6) ── */
 .tax-ref-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid var(--g200)}
@@ -204,11 +216,59 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
 .slbl{font-size:.72rem;font-weight:700;color:var(--primary);margin:12px 0 6px;display:flex;align-items:center;gap:6px}
 .slbl::before{content:'';display:block;width:3px;height:14px;background:var(--primary);border-radius:2px}
 
+/* ── 카드 내 서브 타이틀 ── */
+.card-subtitle{font-size:.9rem;font-weight:700;color:var(--g900);margin:4px 0 10px;display:flex;align-items:center;gap:8px}
+.card-subtitle .ico{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.85rem;background:var(--primary-l);flex-shrink:0}
+
 /* ── MISC ── */
 .section-divider{border:none;border-top:2px dashed var(--g200);margin:18px 0}
 .hint{font-size:.73rem;color:var(--g500);margin-top:5px;font-style:italic}
 .sync-badge{font-size:.65rem;color:#2563eb;background:#dbeafe;padding:1px 5px;border-radius:4px;margin-left:4px;font-weight:600}
 .app-footer{text-align:center;padding:18px;font-size:.75rem;color:var(--g500);border-top:1px solid var(--g200);background:#fff;margin-top:10px}
+
+/* ── ICO 테마 색상 변형 ── */
+.ico-g{background:var(--success-l)}
+.ico-o{background:var(--warn-l)}
+.ico-p{background:var(--pension-l)}
+.ico-b{background:var(--irp-l)}
+.ico-t{background:var(--isa-l)}
+.ico-r{background:var(--danger-l)}
+
+/* ── form-row 내 input-group 하단 마진 제거 (이미 grid gap 사용) ── */
+.form-row > .input-group{margin-bottom:0}
+
+/* ── acc-body 내 form-row: 힌트 전 하단 여백 ── */
+.acc-body .form-row{margin-bottom:4px}
+
+/* ── 힌트 하단 여백 ── */
+.hint-mb{margin-bottom:10px}
+
+/* ── 체크박스 / 라디오 행 레이아웃 ── */
+.checkbox-row{display:flex;align-items:center;gap:8px;margin-top:10px}
+.checkbox-row input[type="checkbox"]{width:auto;cursor:pointer}
+.checkbox-row label{font-size:.82rem;font-weight:600;color:var(--g700);cursor:pointer}
+.radio-row{display:flex;align-items:center;gap:12px;padding:6px 0 4px 22px;font-size:.82rem;font-weight:600;color:var(--g700)}
+.radio-row-lbl{color:var(--g500)}
+.radio-lbl{display:flex;align-items:center;gap:4px;cursor:pointer;font-weight:600}
+.radio-lbl input[type="radio"]{width:auto;cursor:pointer}
+
+/* ── 탭 간 result-grid 간격 통일 ── */
+.result-grid + .section-divider,
+.result-grid + hr.section-divider{margin-top:16px}
+
+/* ── 공통 마진 유틸 ── */
+.mt-10{margin-top:10px}
+.mt-12{margin-top:12px}
+
+/* ── 현금흐름 자동 연동 바 ── */
+.cf-sync-bar{display:flex;align-items:center;gap:6px;margin-top:6px;padding:5px 9px;border-radius:7px;font-size:.72rem;font-weight:600;border:1.5px dashed}
+.cf-sync-bar.sync-asset{background:var(--pension-l);color:var(--pension);border-color:var(--pension)}
+.cf-sync-bar.sync-pension{background:var(--isa-l);color:#059669;border-color:var(--isa)}
+.cf-sync-bar input[type="checkbox"]{width:auto;cursor:pointer;accent-color:var(--primary);flex-shrink:0}
+.cf-sync-bar label{cursor:pointer;flex:1}
+.cf-sync-val{font-weight:800;color:var(--g900);background:rgba(255,255,255,.6);padding:1px 6px;border-radius:4px;white-space:nowrap}
+input[type="range"].cf-linked,
+input[type="number"].cf-linked{background:var(--g100) !important;border-color:var(--g200) !important;color:var(--g500) !important;cursor:not-allowed !important;pointer-events:none}
 </style>
 </head>
 <body>
@@ -273,7 +333,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
           <div class="input-label">은퇴 후 월 생활비(현재 기준) <span class="sync-badge">🔗연동</span> <span class="input-value" id="c-monthly-v">300만원</span></div>
           <div class="range-row">
             <input type="range" id="c-monthly" min="100" max="2000" step="50" value="300" oninput="syncRange(this,'n-c-monthly','c-monthly-v','만원');propagate('monthly',this.value);updateCalc();updateCashflow()">
-            <input type="number" id="n-c-monthly" value="300" min="100" max="2000" step="10" oninput="syncNum(this,'c-monthly','c-monthly-v','만원');propagate('monthly',this.value);updateCalc();updateCashflow()">
+            <input type="number" id="n-c-monthly" value="300" min="100" max="2000" step="50" oninput="syncNum(this,'c-monthly','c-monthly-v','만원');propagate('monthly',this.value);updateCalc();updateCashflow()">
           </div>
         </div>
         <div class="input-group">
@@ -293,8 +353,8 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
         <div class="input-group">
           <div class="input-label">현재 저축/투자 자산 <span class="input-value" id="c-current-v">1억원</span></div>
           <div class="range-row">
-            <input type="range" id="r-c-current" min="0" max="50000" step="100" value="10000" oninput="syncRange(this,'c-current','c-current-v','만원');updateCalc()">
-            <input type="number" id="c-current" value="10000" min="0" max="50000" step="100" oninput="syncNum(this,'r-c-current','c-current-v','만원');updateCalc()">
+            <input type="range" id="c-current" min="0" max="50000" step="100" value="10000" oninput="syncRange(this,'n-c-current','c-current-v','만원');updateCalc()">
+            <input type="number" id="n-c-current" value="10000" min="0" max="50000" step="100" oninput="syncNum(this,'c-current','c-current-v','만원');updateCalc()">
           </div>
         </div>
         <div class="input-group">
@@ -413,7 +473,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
           <div class="result-box green">
             <div class="result-box-label">총 납입액(본인)</div>
             <div class="result-box-value" id="p-r-paid">-</div>
-            <div class="result-box-sub">소득월액 × 4.5%</div>
+            <div class="result-box-sub">소득월액 × 4.75%</div>
           </div>
           <div class="result-box orange">
             <div class="result-box-label">총 예상 수령액</div>
@@ -436,7 +496,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
   <div class="container">
     <div class="grid-2">
       <div class="card">
-        <div class="card-title"><div class="ico">💰</div> 현재 자산 현황 (만원)</div>
+        <div class="card-title"><div class="ico ico-g">💰</div> 현재 자산 현황 (만원)</div>
         <div class="asset-row">
           <div class="asset-dot" style="background:#2563eb"></div>
           <div class="asset-name">🏠 부동산</div>
@@ -490,6 +550,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
           <div class="result-box">
             <div class="result-box-label">총 자산</div>
             <div class="result-box-value" id="a-total">-</div>
+            <div class="result-box-sub">전체 자산 합계</div>
           </div>
           <div class="result-box green">
             <div class="result-box-label">금융 자산</div>
@@ -503,7 +564,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
         <div class="card-title"><div class="ico">📊</div> 자산 배분 현황</div>
         <div class="chart-wrap" style="height:230px"><canvas id="portfolioChart"></canvas></div>
         <hr class="section-divider">
-        <div class="card-title" style="margin-bottom:10px"><div class="ico">🎯</div> 은퇴 준비도 분석</div>
+        <div class="card-subtitle"><div class="ico ico-o">🎯</div> 은퇴 준비도 분석</div>
         <div id="portfolio-analysis"></div>
       </div>
     </div>
@@ -520,22 +581,22 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
     <div class="card">
       <div class="card-title"><div class="ico">⚙️</div> 기본 설정</div>
       <div class="form-row">
-        <div class="input-group" style="margin-bottom:0">
+        <div class="input-group">
           <div class="input-label">현재 나이 <span class="sync-badge">🔗연동</span> <span class="input-value" id="ta-age-v">40세</span></div>
           <div class="range-row">
             <input type="range" id="ta-age" min="20" max="65" value="40" oninput="syncRange(this,'n-ta-age','ta-age-v','세');propagate('curAge',this.value);updateCalc();updatePension();updateTaxAccount()">
             <input type="number" id="n-ta-age" value="40" min="20" max="65" oninput="syncNum(this,'ta-age','ta-age-v','세');propagate('curAge',this.value);updateCalc();updatePension();updateTaxAccount()">
           </div>
         </div>
-        <div class="input-group" style="margin-bottom:0">
-          <div class="input-label">은퇴 나이 <span class="sync-badge">🔗연동</span> <span class="input-value" id="ta-ret-v">65세</span></div>
+        <div class="input-group">
+          <div class="input-label">은퇴 나이 <span class="sync-badge">🔗연동</span> <span class="input-value" id="ta-ret-v">60세</span></div>
           <div class="range-row">
-            <input type="range" id="ta-ret" min="40" max="80" value="65" oninput="syncRange(this,'n-ta-ret','ta-ret-v','세');propagate('retAge',this.value);updateCalc();updateTaxAccount();updateCashflow()">
-            <input type="number" id="n-ta-ret" value="65" min="40" max="80" oninput="syncNum(this,'ta-ret','ta-ret-v','세');propagate('retAge',this.value);updateCalc();updateTaxAccount();updateCashflow()">
+            <input type="range" id="ta-ret" min="40" max="80" value="60" oninput="syncRange(this,'n-ta-ret','ta-ret-v','세');propagate('retAge',this.value);updateCalc();updateTaxAccount();updateCashflow()">
+            <input type="number" id="n-ta-ret" value="60" min="40" max="80" oninput="syncNum(this,'ta-ret','ta-ret-v','세');propagate('retAge',this.value);updateCalc();updateTaxAccount();updateCashflow()">
           </div>
         </div>
       </div>
-      <div class="input-group" style="margin-top:12px">
+      <div class="input-group mt-12">
         <div class="input-label">소득 구간 (세액공제율 결정)</div>
         <select id="ta-income-tier" onchange="updateTaxAccount()">
           <option value="16.5" selected>총급여 5,500만원 이하 (종합소득 4,500만원 이하) — 세액공제 16.5%</option>
@@ -561,16 +622,17 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
             </label>
           </div>
           <div class="acc-body" id="pen-body">
-            <div class="form-row" style="margin-bottom:12px">
-              <div class="input-group" style="margin-bottom:0">
+            <div class="form-row">
+              <div class="input-group">
                 <div class="input-label">납입 시작 나이</div>
                 <input type="number" id="pen-start-age" value="40" min="18" max="75" oninput="updateTaxAccount()">
               </div>
-              <div class="input-group" style="margin-bottom:0">
+              <div class="input-group">
                 <div class="input-label">납입 종료 나이</div>
-                <input type="number" id="pen-end-age" value="65" min="18" max="80" oninput="updateTaxAccount()">
+                <input type="number" id="pen-end-age" value="60" min="18" max="80" oninput="updateTaxAccount()">
               </div>
             </div>
+            <div class="hint hint-mb" id="pen-age-hint"></div>
             <div class="input-group">
               <div class="input-label">월 납입금 <span class="input-value" id="pm-v">50만원</span></div>
               <div class="range-row">
@@ -603,16 +665,17 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
             </label>
           </div>
           <div class="acc-body" id="irp-body">
-            <div class="form-row" style="margin-bottom:12px">
-              <div class="input-group" style="margin-bottom:0">
+            <div class="form-row">
+              <div class="input-group">
                 <div class="input-label">납입 시작 나이</div>
                 <input type="number" id="irp-start-age" value="40" min="18" max="75" oninput="updateTaxAccount()">
               </div>
-              <div class="input-group" style="margin-bottom:0">
+              <div class="input-group">
                 <div class="input-label">납입 종료 나이</div>
-                <input type="number" id="irp-end-age" value="65" min="18" max="80" oninput="updateTaxAccount()">
+                <input type="number" id="irp-end-age" value="60" min="18" max="80" oninput="updateTaxAccount()">
               </div>
             </div>
+            <div class="hint hint-mb" id="irp-age-hint"></div>
             <div class="input-group">
               <div class="input-label">월 납입금 <span class="input-value" id="im-v">25만원</span></div>
               <div class="range-row">
@@ -645,16 +708,17 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
             </label>
           </div>
           <div class="acc-body" id="isa-body">
-            <div class="form-row" style="margin-bottom:12px">
-              <div class="input-group" style="margin-bottom:0">
+            <div class="form-row">
+              <div class="input-group">
                 <div class="input-label">납입 시작 나이</div>
                 <input type="number" id="isa-start-age" value="40" min="18" max="75" oninput="updateTaxAccount()">
               </div>
-              <div class="input-group" style="margin-bottom:0">
+              <div class="input-group">
                 <div class="input-label">납입 종료 나이</div>
-                <input type="number" id="isa-end-age" value="65" min="18" max="80" oninput="updateTaxAccount()">
+                <input type="number" id="isa-end-age" value="60" min="18" max="80" oninput="updateTaxAccount()">
               </div>
             </div>
+            <div class="hint hint-mb" id="isa-age-hint"></div>
             <div class="input-group">
               <div class="input-label">월 납입금 <span class="input-value" id="sam-v">50만원</span></div>
               <div class="range-row">
@@ -671,26 +735,35 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
               </div>
             </div>
             <div class="form-row">
-              <div class="input-group" style="margin-bottom:0">
-                <div class="input-label" style="margin-bottom:6px">계좌 유형</div>
+              <div class="input-group">
+                <div class="input-label">계좌 유형</div>
                 <select id="isa-type" onchange="updateTaxAccount()">
                   <option value="200" selected>일반형 (비과세 200만원)</option>
                   <option value="400">서민형 (비과세 400만원)</option>
                 </select>
               </div>
-              <div class="input-group" style="margin-bottom:0">
-                <div class="input-label" style="margin-bottom:6px">만기 주기</div>
+              <div class="input-group">
+                <div class="input-label">만기 주기</div>
                 <div class="seg-group" id="isa-period-group">
                   <button class="seg-btn on" data-val="3" onclick="selISAPeriod(this)">3년</button>
                   <button class="seg-btn" data-val="5" onclick="selISAPeriod(this)">5년</button>
                 </div>
               </div>
             </div>
-            <div class="input-group" style="margin-top:10px;display:flex;align-items:center;gap:8px">
-              <input type="checkbox" id="isa-transfer" checked onchange="updateTaxAccount()" style="width:auto;cursor:pointer">
-              <label for="isa-transfer" style="font-size:.82rem;font-weight:600;color:var(--g700);cursor:pointer">만기 시 연금계좌 전환 (추가 세액공제 최대 300만원)</label>
+            <div class="checkbox-row">
+              <input type="checkbox" id="isa-transfer" checked onchange="toggleIsaXferTarget();updateTaxAccount()">
+              <label for="isa-transfer">만기 시 연금계좌 전환 (추가 세액공제 최대 300만원)</label>
             </div>
-            <div class="info-box info-box-g">만기 전환액 최대 <strong>3,000만원</strong>의 10% = 최대 <strong>300만원</strong> 추가 세액공제. 비과세 한도 초과분은 9.9% 분리과세.</div>
+            <div id="isa-xfer-target" class="radio-row">
+              <span class="radio-row-lbl">전환 대상</span>
+              <label class="radio-lbl">
+                <input type="radio" name="isa-xfer-target" value="pen" checked onchange="updateTaxAccount()"> 연금저축
+              </label>
+              <label class="radio-lbl">
+                <input type="radio" name="isa-xfer-target" value="irp" onchange="updateTaxAccount()"> IRP
+              </label>
+            </div>
+            <div class="info-box info-box-g">만기 전환액 최대 <strong>3,000만원</strong>의 10% = 최대 <strong>300만원</strong> 추가 세액공제. 전환금은 선택한 연금계좌에 합산됩니다.</div>
           </div>
         </div>
       </div>
@@ -699,43 +772,59 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
       <div>
         <!-- 요약 결과 -->
         <div class="card">
-          <div class="card-title"><div class="ico">📋</div> 은퇴 시 예상 적립금</div>
+          <div class="card-title"><div class="ico ico-p">📋</div> 은퇴 시 예상 적립금</div>
           <div class="result-grid">
             <div class="result-box purple">
               <div class="result-box-label">연금저축</div>
               <div class="result-box-value" id="ta-r-pen">-</div>
-              <div class="result-box-sub">세전</div>
+              <div class="result-box-sub" id="ta-r-pen-sub">세전</div>
             </div>
             <div class="result-box" style="border-left-color:var(--irp)">
               <div class="result-box-label">IRP</div>
               <div class="result-box-value" id="ta-r-irp">-</div>
-              <div class="result-box-sub">세전</div>
+              <div class="result-box-sub" id="ta-r-irp-sub">세전</div>
             </div>
             <div class="result-box green">
-              <div class="result-box-label">ISA</div>
+              <div class="result-box-label">ISA <span id="ta-r-isa-lbl" style="font-size:.65rem">(잔여)</span></div>
               <div class="result-box-value" id="ta-r-isa">-</div>
               <div class="result-box-sub">세후</div>
             </div>
             <div class="result-box orange">
               <div class="result-box-label">합산 총액</div>
               <div class="result-box-value" id="ta-r-total">-</div>
-              <div class="result-box-sub">합산</div>
+              <div class="result-box-sub">절세계좌 합계</div>
             </div>
           </div>
+          <hr class="section-divider">
+          <!-- 원금 vs 수익 분석 -->
+          <div id="principal-breakdown"></div>
         </div>
 
         <!-- 절세 혜택 -->
         <div class="card">
-          <div class="card-title"><div class="ico">🎁</div> 연간 절세 혜택 (세액공제)</div>
+          <div class="card-title"><div class="ico ico-o">🎁</div> 연간 절세 혜택 (세액공제)</div>
+          <!-- 세액공제 합계 강조 박스 -->
+          <div class="result-grid" style="margin-bottom:14px">
+            <div class="result-box orange">
+              <div class="result-box-label">연간 세액공제 합계</div>
+              <div class="result-box-value" id="ta-r-tax-annual">-</div>
+              <div class="result-box-sub">연금저축 + IRP + ISA</div>
+            </div>
+            <div class="result-box purple">
+              <div class="result-box-label">납입기간 누적 절세액</div>
+              <div class="result-box-value" id="ta-r-tax-cumul">-</div>
+              <div class="result-box-sub">전체 납입기간 기준</div>
+            </div>
+          </div>
           <div id="tax-benefit-rows"></div>
-          <div class="chart-wrap" style="height:200px;margin-top:14px"><canvas id="taxAccountChart"></canvas></div>
+          <div class="chart-wrap" style="margin-top:14px"><canvas id="taxAccountChart"></canvas></div>
         </div>
 
         <!-- 수령 예상액 -->
         <div class="card">
-          <div class="card-title"><div class="ico">💵</div> 연금 수령 예상액 (세후 월)</div>
+          <div class="card-title"><div class="ico ico-g">💵</div> 연금 수령 예상액 (세후 월)</div>
           <div id="payout-rows"></div>
-          <div class="info-box info-box-y" style="margin-top:12px">
+          <div class="info-box info-box-y">
             연금소득세는 세원에 따라 달라집니다. 연금저축·IRP는 3.3~5.5%, ISA 전환분은 과세 제외됩니다.
           </div>
         </div>
@@ -761,10 +850,10 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
           </div>
         </div>
         <div class="input-group">
-          <div class="input-label">기대 수명 <span class="sync-badge">🔗연동</span> <span class="input-value" id="s-life-v">90세</span></div>
+          <div class="input-label">기대 수명 <span class="sync-badge">🔗연동</span> <span class="input-value" id="s-life-v">85세</span></div>
           <div class="range-row">
-            <input type="range" id="s-life" min="65" max="105" value="90" oninput="syncRange(this,'n-s-life','s-life-v','세');propagate('lifeAge',this.value);updateCalc();updatePension();updateCashflow()">
-            <input type="number" id="n-s-life" value="90" min="65" max="105" oninput="syncNum(this,'s-life','s-life-v','세');propagate('lifeAge',this.value);updateCalc();updatePension();updateCashflow()">
+            <input type="range" id="s-life" min="65" max="105" value="85" oninput="syncRange(this,'n-s-life','s-life-v','세');propagate('lifeAge',this.value);updateCalc();updatePension();updateCashflow()">
+            <input type="number" id="n-s-life" value="85" min="65" max="105" oninput="syncNum(this,'s-life','s-life-v','세');propagate('lifeAge',this.value);updateCalc();updatePension();updateCashflow()">
           </div>
         </div>
         <div class="input-group">
@@ -773,12 +862,17 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
             <input type="range" id="s-asset" min="0" max="200000" step="1000" value="50000" oninput="syncRange(this,'n-s-asset','s-asset-v','만원');updateCashflow()">
             <input type="number" id="n-s-asset" value="50000" min="0" max="200000" step="1000" oninput="syncNum(this,'s-asset','s-asset-v','만원');updateCashflow()" style="width:95px">
           </div>
+          <div class="cf-sync-bar sync-asset">
+            <input type="checkbox" id="cf-asset-sync" checked onchange="toggleCfSync('asset')">
+            <label for="cf-asset-sync">🔗 절세계좌 합산총액 자동 반영</label>
+            <span id="cf-asset-sync-val" class="cf-sync-val">계산 중…</span>
+          </div>
         </div>
         <div class="input-group">
           <div class="input-label">월 생활비(은퇴 시점 기준) <span class="sync-badge">🔗연동</span> <span class="input-value" id="s-expense-v">300만원</span></div>
           <div class="range-row">
             <input type="range" id="s-expense" min="100" max="2000" step="50" value="300" oninput="syncRange(this,'n-s-expense','s-expense-v','만원');propagate('monthly',this.value);updateCalc();updateCashflow()">
-            <input type="number" id="n-s-expense" value="300" min="100" max="2000" step="10" oninput="syncNum(this,'s-expense','s-expense-v','만원');propagate('monthly',this.value);updateCalc();updateCashflow()">
+            <input type="number" id="n-s-expense" value="300" min="100" max="2000" step="50" oninput="syncNum(this,'s-expense','s-expense-v','만원');propagate('monthly',this.value);updateCalc();updateCashflow()">
           </div>
         </div>
         <div class="input-group">
@@ -786,6 +880,11 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
           <div class="range-row">
             <input type="range" id="s-pension" min="0" max="500" step="5" value="80" oninput="syncRange(this,'n-s-pension','s-pension-v','만원');updateCashflow()">
             <input type="number" id="n-s-pension" value="80" min="0" max="500" step="5" oninput="syncNum(this,'s-pension','s-pension-v','만원');updateCashflow()">
+          </div>
+          <div class="cf-sync-bar sync-pension">
+            <input type="checkbox" id="cf-pension-sync" checked onchange="toggleCfSync('pension')">
+            <label for="cf-pension-sync">🔗 국민연금 수령액 자동 반영</label>
+            <span id="cf-pension-sync-val" class="cf-sync-val">계산 중…</span>
           </div>
         </div>
         <div class="input-group">
@@ -813,20 +912,23 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
       </div>
 
       <div class="card">
-        <div class="card-title"><div class="ico">💹</div> 자산 잔액 시뮬레이션</div>
-        <div class="result-grid" style="margin-bottom:14px">
+        <div class="card-title"><div class="ico ico-b">💹</div> 자산 잔액 시뮬레이션</div>
+        <div class="result-grid">
           <div class="result-box">
             <div class="result-box-label">자산 소진 예상</div>
             <div class="result-box-value" id="s-r-exhaust">-</div>
+            <div class="result-box-sub">예상 소진 시점</div>
           </div>
           <div class="result-box green">
             <div class="result-box-label">사망 시 잔여 자산</div>
             <div class="result-box-value" id="s-r-remain">-</div>
+            <div class="result-box-sub">기대 수명 기준</div>
           </div>
         </div>
-        <div class="chart-wrap" style="height:200px"><canvas id="cashflowChart"></canvas></div>
         <hr class="section-divider">
-        <div class="card-title" style="margin-bottom:8px"><div class="ico">📅</div> 연도별 현황</div>
+        <div class="chart-wrap"><canvas id="cashflowChart"></canvas></div>
+        <hr class="section-divider">
+        <div class="card-subtitle"><div class="ico">📅</div> 연도별 현황</div>
         <div style="overflow:auto;max-height:260px">
           <table class="sim-table">
             <thead>
@@ -903,7 +1005,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
             <tr><td>80세 이상</td><td class="hl-orange">3.3%</td><td>96.7만원</td></tr>
           </tbody>
         </table>
-        <div class="info-box" style="margin-top:10px">연금소득이 연 <strong>1,200만원 초과</strong> 시 종합과세 또는 16.5% 분리과세 선택 가능. 국민연금은 별도 연금소득세 적용.</div>
+        <div class="info-box">연금소득이 연 <strong>1,200만원 초과</strong> 시 종합과세 또는 16.5% 분리과세 선택 가능. 국민연금은 별도 연금소득세 적용.</div>
       </div>
     </div>
 
@@ -953,7 +1055,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
             <tr><td class="tl">비례상수</td><td>1.245</td><td class="hl-blue">1.29</td><td>2026년 적용</td></tr>
           </tbody>
         </table>
-        <div class="info-box" style="margin-top:10px">
+        <div class="info-box">
           <strong>보험료율 단계적 인상 로드맵:</strong> 2026년 9.5% → 2027년 10.0% → … → 2033년 13.0% (매년 0.5%p 인상)<br>
           <strong>소득대체율:</strong> 2026년 43%로 상향 고정 (이전 40%에서 개혁으로 인상)<br>
           <strong>A값:</strong> 국민연금 전체 가입자 3년 평균 기준소득월액. 매년 고시. 낮은 소득자일수록 A값 비중이 높아 수령액이 유리
@@ -1019,7 +1121,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
             </tr>
           </tbody>
         </table>
-        <div class="info-box" style="margin-top:10px">ISA 만기 연금계좌 전환 시 전환액(최대 3,000만원)의 <strong>10% = 최대 300만원</strong> 추가 세액공제. 세액공제율은 총급여 5,500만원 기준.</div>
+        <div class="info-box">ISA 만기 연금계좌 전환 시 전환액(최대 3,000만원)의 <strong>10% = 최대 300만원</strong> 추가 세액공제. 세액공제율은 총급여 5,500만원 기준.</div>
       </div>
     </div>
 
@@ -1083,7 +1185,7 @@ input:checked + .slider-sw::before{transform:translateX(18px)}
             <tr><td class="tl">기부금 (법정)</td><td>15~30%</td><td>근로소득금액 내</td></tr>
           </tbody>
         </table>
-        <div class="info-box" style="margin-top:10px">월세 세액공제 17% 적용 조건: 총급여 <strong>5,500만원 이하</strong> 무주택 세대주, 기준시가 4억 이하 주택</div>
+        <div class="info-box">월세 세액공제 17% 적용 조건: 총급여 <strong>5,500만원 이하</strong> 무주택 세대주, 기준시가 4억 이하 주택</div>
       </div>
     </div>
 
@@ -1165,7 +1267,7 @@ function updateCalc() {
   const monthly = +document.getElementById('c-monthly').value;
   const inflation   = +document.getElementById('c-inflation').value / 100;
   const retReturn   = +document.getElementById('c-return').value / 100;
-  const currentAss  = +document.getElementById('c-current').value;
+  const currentAss  = +document.getElementById('n-c-current').value;
   const saveReturn  = +document.getElementById('c-save-return').value / 100;
 
   document.getElementById('c-cur-age-v').textContent   = curAge + '세';
@@ -1267,6 +1369,10 @@ function updatePension() {
   if (diff<0) monthlyPension *= Math.max(0, 1+0.06*diff); // 조기수령: 연 6% 감액
   else        monthlyPension *= (1+0.072*diff);            // 연기수령: 연 7.2% 증액
   monthlyPension = Math.max(0,Math.round(monthlyPension));
+
+  // ── 현금흐름 연동: 국민연금 월 수령액 캐시 업데이트 ──
+  _lastPensionMonthly = monthlyPension;
+  if (applyCfPensionSync()) updateCashflow();
 
   const totalPaid  = income*0.0475*months; // 2026년 보험료율 9.5%, 본인부담 4.75%
   const recvYears  = Math.max(lifeAge-recvAge,0);
@@ -1417,6 +1523,12 @@ function selISAPeriod(btn) {
   updateTaxAccount();
 }
 
+function toggleIsaXferTarget() {
+  const chk = document.getElementById('isa-transfer');
+  const tgt = document.getElementById('isa-xfer-target');
+  if (tgt) tgt.style.display = chk.checked ? 'flex' : 'none';
+}
+
 // ── 올바른 월납 복리 적립 공식 (월납 PMT × 월 복리) ──
 function fvAnnuity(monthly, annualRate, years) {
   if (years <= 0) return 0;
@@ -1435,21 +1547,22 @@ function fvWithAge(monthly, annualRate, startAge, endAge, retAge) {
 }
 
 // ── ISA 만기 재투자 포함 FV 계산 (참조파일 로직 반영) ──
-function calcISA_FV(sam, sar, totalYears, maturityYears, doTransfer, freeLimit) {
+// retYears: ISA 납입시작나이부터 은퇴까지 총 기간 (각 만기 전환금의 복리 성장 계산용)
+function calcISA_FV(sam, sar, totalYears, maturityYears, doTransfer, freeLimit, retYears) {
   const mr = sar / 12;
   let bal = 0;
-  let lastCycleBal = 0; // 마지막 사이클 잔액 추적용
   const totalMonths = Math.round(totalYears * 12);
   const cycleMonths = Math.round(maturityYears * 12);
-  let totalTransferred = 0;
-  let totalXferCredit = 0;
+  const retMonths   = Math.round((retYears !== undefined ? retYears : totalYears) * 12);
+  let totalTransferred   = 0;
+  let totalXferCredit    = 0;
+  let totalTransferredFV = 0; // 각 만기 전환금이 은퇴시점까지 복리 성장한 합산액
 
   for (let m = 1; m <= totalMonths; m++) {
     bal = bal * (1 + mr) + sam;
 
     // 만기 처리 (cycleMonths마다)
     if (m % cycleMonths === 0) {
-      const monthsSinceStart = m;
       const contrib = sam * cycleMonths;
       const profit  = Math.max(0, bal - contrib);
       const taxable = Math.max(0, profit - freeLimit);
@@ -1459,22 +1572,32 @@ function calcISA_FV(sam, sar, totalYears, maturityYears, doTransfer, freeLimit) 
         totalTransferred += netBal;
         // 전환액(최대 3,000만원)의 10% 추가 세액공제
         totalXferCredit += Math.min(netBal, 3000) * 0.1;
+        // 만기 전환금을 은퇴까지 복리 운용 (연금계좌에서 계속 성장)
+        const monthsToRet = Math.max(0, retMonths - m);
+        totalTransferredFV += netBal * Math.pow(1 + sar, monthsToRet / 12);
         bal = 0; // ISA 초기화 후 재납입
-      } else {
-        lastCycleBal = netBal;
       }
     }
   }
 
-  // 만기 전환 미사용: 전체 기간 운용 후 세금 처리
+  // 세금 처리: 만기 미전환은 전체 기간 기준, 만기 전환은 미완성 주기 잔액 기준
   if (!doTransfer) {
     const totalContrib = sam * totalMonths;
     const profit  = Math.max(0, bal - totalContrib);
     const taxable = Math.max(0, profit - freeLimit);
     bal = bal - taxable * 0.099;
+  } else if (bal > 0) {
+    // doTransfer=true일 때 미완성 주기 잔액(마지막 불완전 사이클)에 세금 처리
+    const partialMonths = cycleMonths > 0 ? totalMonths % cycleMonths : 0;
+    if (partialMonths > 0) {
+      const partialContrib = sam * partialMonths;
+      const partialProfit  = Math.max(0, bal - partialContrib);
+      const partialTaxable = Math.max(0, partialProfit - freeLimit);
+      bal = bal - partialTaxable * 0.099;
+    }
   }
 
-  return { isaFV: bal, totalTransferred, totalXferCredit };
+  return { isaFV: bal, totalTransferred, totalXferCredit, totalTransferredFV };
 }
 
 function updateTaxAccount() {
@@ -1506,33 +1629,144 @@ function updateTaxAccount() {
 
   // ── 적립금 계산 (올바른 월납 복리 공식 적용) ──
   // 납입시작/종료나이 읽기
-  const penStartAge = Math.max(+document.getElementById('pen-start-age').value||curAge, curAge);
+  const penStartAge = +document.getElementById('pen-start-age').value || curAge;
   const penEndAge   = Math.min(+document.getElementById('pen-end-age').value||retAge, retAge);
-  const irpStartAge = Math.max(+document.getElementById('irp-start-age').value||curAge, curAge);
+  const irpStartAge = +document.getElementById('irp-start-age').value || curAge;
   const irpEndAge   = Math.min(+document.getElementById('irp-end-age').value||retAge, retAge);
-  const isaStartAge = Math.max(+document.getElementById('isa-start-age').value||curAge, curAge);
+  const isaStartAge = +document.getElementById('isa-start-age').value || curAge;
   const isaEndAge   = Math.min(+document.getElementById('isa-end-age').value||retAge, retAge);
 
-  const penFV = fvWithAge(pm, pr, penStartAge, penEndAge, retAge);
-  const irpFV = fvWithAge(im, ir, irpStartAge, irpEndAge, retAge);
+  // 납입기간 힌트 표시
+  const hintEl = (id, sa, ea) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const yrs = Math.max(ea - sa, 0);
+    if (yrs > 0) {
+      el.textContent = `납입기간: ${sa}세 ~ ${ea}세 (${yrs}년)`;
+      el.style.color = '';
+    } else {
+      el.textContent = sa > ea
+        ? `⚠️ 오류: 납입 시작나이(${sa}세)가 종료나이(${ea}세)보다 큽니다. 기간을 확인하세요.`
+        : `납입기간: 0년 (종료나이 = 시작나이)`;
+      el.style.color = sa > ea ? 'var(--danger)' : 'var(--g500)';
+    }
+  };
+  hintEl('pen-age-hint', penStartAge, penEndAge);
+  hintEl('irp-age-hint', irpStartAge, irpEndAge);
+  hintEl('isa-age-hint', isaStartAge, isaEndAge);
 
-  // ISA: 만기 재투자 포함 계산 (참조파일 로직 적용)
-  let isaFV = 0, isaXferCredit = 0, isaTransferred = 0;
+  let penFV = fvWithAge(pm, pr, penStartAge, penEndAge, retAge);
+  let irpFV = fvWithAge(im, ir, irpStartAge, irpEndAge, retAge);
+
+  // ISA: 만기 재투자 포함 계산
+  let isaFV = 0, isaXferCredit = 0, isaTransferred = 0, isaTransferredFV = 0;
   if (isaOn && sam > 0) {
     const isaContribYears = Math.max(isaEndAge - isaStartAge, 0);
     const isaGrowthYears  = Math.max(retAge - isaEndAge, 0);
-    const isaRes = calcISA_FV(sam, sar, isaContribYears, isaMaturity, isaXfer, isaType);
+    const isaRetYears     = Math.max(retAge - isaStartAge, 0);
+    const isaRes = calcISA_FV(sam, sar, isaContribYears, isaMaturity, isaXfer, isaType, isaRetYears);
+    isaTransferredFV = isaRes.totalTransferredFV;
+    // ISA 잔여분(미전환)만 isaFV로 — 전환금은 아래서 연금계좌에 합산
     isaFV = isaRes.isaFV * Math.pow(1 + sar, isaGrowthYears);
-    isaXferCredit = isaRes.totalXferCredit;
+    isaXferCredit  = isaRes.totalXferCredit;
     isaTransferred = isaRes.totalTransferred;
   }
 
+  // ISA 만기 전환금 → 선택한 연금계좌에 합산
+  const isaXferTarget = isaXfer && isaOn
+    ? (document.querySelector('input[name="isa-xfer-target"]:checked')?.value || 'pen')
+    : null;
+  if (isaXferTarget === 'pen') penFV += isaTransferredFV;
+  else if (isaXferTarget === 'irp') irpFV += isaTransferredFV;
+
   const total = penFV + irpFV + isaFV;
 
-  document.getElementById('ta-r-pen').textContent   = penOn ? fmtM(penFV) : '비활성';
-  document.getElementById('ta-r-irp').textContent   = irpOn ? fmtM(irpFV) : '비활성';
+  // ── 현금흐름 연동: 합산총액 캐시 업데이트 ──
+  _lastTaxTotal = total;
+  if (applyCfAssetSync()) updateCashflow();
+
+  // 결과 박스 — ISA 전환분 포함 계좌는 서브라벨에 표시
+  const penIncIsa = isaXferTarget === 'pen' && isaTransferredFV > 0;
+  const irpIncIsa = isaXferTarget === 'irp' && isaTransferredFV > 0;
+  document.getElementById('ta-r-pen').textContent   = (penOn || penIncIsa) ? fmtM(penFV) : '비활성';
+  document.getElementById('ta-r-irp').textContent   = (irpOn || irpIncIsa) ? fmtM(irpFV) : '비활성';
   document.getElementById('ta-r-isa').textContent   = isaOn ? fmtM(isaFV) : '비활성';
   document.getElementById('ta-r-total').textContent = fmtM(total);
+  const penSubEl = document.getElementById('ta-r-pen-sub');
+  const irpSubEl = document.getElementById('ta-r-irp-sub');
+  const isaLblEl = document.getElementById('ta-r-isa-lbl');
+  if (penSubEl) penSubEl.textContent = penIncIsa ? `세전 (ISA전환 ${fmtM(isaTransferredFV)} 포함)` : '세전';
+  if (irpSubEl) irpSubEl.textContent = irpIncIsa ? `세전 (ISA전환 ${fmtM(isaTransferredFV)} 포함)` : '세전';
+  if (isaLblEl) isaLblEl.textContent = isaXfer && isaOn && isaTransferredFV > 0
+    ? `(잔여 / 전환→${isaXferTarget === 'pen' ? '연금저축' : 'IRP'})`  : '';
+
+  // ── 원금 vs 수익 분석 ──
+  const penOwnFV   = fvWithAge(pm, pr, penStartAge, penEndAge, retAge); // ISA 전환 제외한 연금저축 자체 FV
+  const irpOwnFV   = fvWithAge(im, ir, irpStartAge, irpEndAge, retAge); // ISA 전환 제외한 IRP 자체 FV
+  const isaAllFV   = isaTransferredFV + isaFV; // ISA 전체 성과(전환분+잔여)
+
+  const penPrincipal = penOn ? pm  * Math.max(penEndAge - penStartAge, 0) * 12 : 0;
+  const irpPrincipal = irpOn ? im  * Math.max(irpEndAge - irpStartAge, 0) * 12 : 0;
+  const isaPrincipal = isaOn ? sam * Math.max(isaEndAge - isaStartAge, 0) * 12 : 0;
+  const totalPrincipal = penPrincipal + irpPrincipal + isaPrincipal;
+  const totalOwnFV = penOwnFV + irpOwnFV + isaAllFV; // ISA 전환분 이동 전 합산 (중복 제거)
+
+  const retPct = (fv, prin) => {
+    if (prin <= 0) return '<span class="ret-pct" style="background:var(--g100);color:var(--g500)">—</span>';
+    const pct = ((fv - prin) / prin * 100);
+    const cls = pct >= 0 ? 'ret-pos' : 'ret-neg';
+    return `<span class="ret-pct ${cls}">${pct >= 0 ? '+' : ''}${pct.toFixed(0)}%</span>`;
+  };
+
+  const mkRow = (label, prin, fv, active, isaBonus) => {
+    if (!active) return `<tr><td>${label}</td><td colspan="4" style="color:var(--g500);font-size:.75rem">비활성</td></tr>`;
+    const profit = fv - prin;
+    const bonusTxt = isaBonus > 0
+      ? `<span style="font-size:.68rem;color:#6d28d9"> (+ISA전환 ${fmtM(isaBonus)})</span>` : '';
+    return `<tr>
+      <td>${label}${bonusTxt}</td>
+      <td>${Math.round(prin).toLocaleString()}만원</td>
+      <td style="color:var(--primary);font-weight:700">${fmtM(fv)}</td>
+      <td style="color:${profit>=0?'var(--success)':'var(--danger)'}">${profit>=0?'+':''}${fmtM(profit)}</td>
+      <td>${retPct(fv, prin)}</td>
+    </tr>`;
+  };
+
+  const penBonusForRow = penIncIsa ? isaTransferredFV : 0;
+  const irpBonusForRow = irpIncIsa ? isaTransferredFV : 0;
+
+  const breakdownHTML = `
+    <div style="font-size:.8rem;font-weight:700;color:var(--g700);margin-bottom:8px">📊 납입 원금 vs 운용 수익</div>
+    <table class="prin-table">
+      <thead>
+        <tr>
+          <th>계좌</th>
+          <th>납입 원금</th>
+          <th>은퇴 시 적립금</th>
+          <th>운용 수익</th>
+          <th>수익률</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${mkRow('연금저축', penPrincipal, penFV, penOn || penIncIsa, penBonusForRow)}
+        ${mkRow('IRP', irpPrincipal, irpFV, irpOn || irpIncIsa, irpBonusForRow)}
+        ${mkRow('ISA (전체)', isaPrincipal, isaAllFV, isaOn, 0)}
+        <tr class="total-row">
+          <td>합 계</td>
+          <td>${Math.round(totalPrincipal).toLocaleString()}만원</td>
+          <td style="color:var(--warn)">${fmtM(total)}</td>
+          <td style="color:${(total-totalPrincipal)>=0?'var(--success)':'var(--danger)'}">
+            ${(total-totalPrincipal)>=0?'+':''}${fmtM(total-totalPrincipal)}
+          </td>
+          <td>${retPct(totalOwnFV, totalPrincipal)}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:.68rem;color:var(--g500);margin-top:6px">
+      * ISA 전체 = 만기 전환금(은퇴까지 복리) + 잔여분. 수익률은 복리 누적 기준.
+    </div>
+  `;
+  document.getElementById('principal-breakdown').innerHTML = breakdownHTML;
 
   // 세액공제 혜택
   const penAnnual = Math.min(pm*12, 600);       // 연금저축 최대 600만원
@@ -1543,38 +1777,54 @@ function updateTaxAccount() {
 
   // ISA 전환 세액공제 — calcISA_FV에서 실제 잔액 기반으로 계산됨
   // isaXferCredit: 총 세액공제 누계 (만기마다 최대 300만원)
-  const annualXferCredit = (isaXfer && isaOn && years > 0)
-    ? isaXferCredit / Math.max(Math.floor(years / isaMaturity), 1)
+  const isaContribYearsForCredit = Math.max(isaEndAge - isaStartAge, 0);
+  const isaCycleCount = Math.floor(isaContribYearsForCredit / isaMaturity); // 완성된 만기 사이클 수
+  const annualXferCredit = (isaXfer && isaOn && isaCycleCount > 0)
+    ? isaXferCredit / isaCycleCount
     : 0; // 회당 평균 세액공제
 
   const totalTax = penTax + irpTax + annualXferCredit;
 
-  const totalXferCycles = isaXfer && isaOn ? Math.floor(years / isaMaturity) : 0;
+  // 납입기간 누적 절세액: (연금저축+IRP 연간 세액공제) × 납입기간 + ISA 전환 세액공제 누계
+  const penContribYears  = Math.max(penEndAge - penStartAge, 0);
+  const irpContribYears  = Math.max(irpEndAge - irpStartAge, 0);
+  const maxContribYears  = Math.max(penContribYears, irpContribYears);
+  const annualPenIrpTax  = (penOn ? penTax : 0) + (irpOn ? irpTax : 0);
+  const cumulTax = annualPenIrpTax * maxContribYears + (isaXfer && isaOn ? isaXferCredit : 0);
+
+  // 결과 박스 업데이트
+  const taAnnualEl = document.getElementById('ta-r-tax-annual');
+  const taCumulEl  = document.getElementById('ta-r-tax-cumul');
+  if (taAnnualEl) taAnnualEl.textContent = totalTax > 0 ? '연 ' + fmtM(totalTax) : '—';
+  if (taCumulEl)  taCumulEl.textContent  = cumulTax  > 0 ? fmtM(cumulTax)       : '—';
+
+  const totalXferCycles = isaXfer && isaOn && isaCycleCount > 0 ? isaCycleCount : 0;
   const taxHTML = `
     <div class="tax-row"><span class="tx-lbl">연금저축 세액공제 (연 ${penAnnual}만원 × ${tier}%)</span><span class="tx-val" style="color:var(--warn)">${penOn?'연 '+penTax.toFixed(1)+'만원':'—'}</span></div>
     <div class="tax-row"><span class="tx-lbl">IRP 추가 세액공제 (연 ${irpDeduct}만원 × ${tier}%)</span><span class="tx-val" style="color:var(--warn)">${irpOn?'연 '+irpTax.toFixed(1)+'만원':'—'}</span></div>
     <div class="tax-row"><span class="tx-lbl">ISA 만기 전환 추가공제 (${totalXferCycles}회 전환)</span><span class="tx-val" style="color:var(--isa)">${isaXfer&&isaOn&&totalXferCycles>0?'총 '+isaXferCredit.toFixed(0)+'만원 (회당 평균 '+annualXferCredit.toFixed(0)+'만)':'—'}</span></div>
-    <div class="tax-total"><span class="tx-lbl">연간 절세 합계</span><span class="tv">≈ 연 ${totalTax.toFixed(0)}만원</span></div>
+    <div class="tax-total"><span class="tx-lbl">연간 절세 합계</span><span class="tv">≈ 연 ${fmtM(totalTax)}</span></div>
   `;
   document.getElementById('tax-benefit-rows').innerHTML = taxHTML;
 
   // 수령 예상 (세후 월)
-  const recvYears = 20; // assume 20y payout
-  const penMonthly = penFV / (recvYears * 12);
-  const penTaxRate = 0.055; // <70 years
-  const penNetMo = Math.round(penMonthly * (1-penTaxRate));
+  const recvYears = 20;
+  const penTaxRate = 0.055; // 연금소득세 70세 미만 5.5%
+  const penNetMo = Math.round(penFV / (recvYears*12) * (1-penTaxRate));
   const irpNetMo = Math.round(irpFV / (recvYears*12) * (1-penTaxRate));
-  const isaNetMo = Math.round(isaFV / (recvYears*12));
+  const isaNetMo = Math.round(isaFV / (recvYears*12)); // ISA 잔여분은 비과세
+  const penLabel = penIncIsa ? `연금저축<br><span style="font-size:.6rem;color:#6d28d9">+ISA전환</span>` : '연금저축';
+  const irpLabel = irpIncIsa ? `IRP<br><span style="font-size:.6rem;color:#6d28d9">+ISA전환</span>` : 'IRP';
 
   const payoutHTML = `
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px">
       <div style="text-align:center;background:var(--pension-l);padding:10px;border-radius:10px">
-        <div style="font-size:.7rem;color:var(--pension);font-weight:700;margin-bottom:4px">연금저축</div>
+        <div style="font-size:.7rem;color:var(--pension);font-weight:700;margin-bottom:4px">${penLabel}</div>
         <div style="font-size:1rem;font-weight:800;color:var(--g900)">${penNetMo.toLocaleString()}만</div>
         <div style="font-size:.68rem;color:var(--g500)">월 / 세후</div>
       </div>
       <div style="text-align:center;background:var(--irp-l);padding:10px;border-radius:10px">
-        <div style="font-size:.7rem;color:#0284c7;font-weight:700;margin-bottom:4px">IRP</div>
+        <div style="font-size:.7rem;color:#0284c7;font-weight:700;margin-bottom:4px">${irpLabel}</div>
         <div style="font-size:1rem;font-weight:800;color:var(--g900)">${irpNetMo.toLocaleString()}만</div>
         <div style="font-size:.68rem;color:var(--g500)">월 / 세후</div>
       </div>
@@ -1591,24 +1841,107 @@ function updateTaxAccount() {
   `;
   document.getElementById('payout-rows').innerHTML = payoutHTML;
 
-  // Chart
+  // ISA 시점별 잔여분(미전환) / 전환분 분리 헬퍼
+  const isaCalcAtAge = (chartAge) => {
+    if (!isaOn || sam <= 0 || chartAge <= isaStartAge) return { rem: 0, xfr: 0 };
+    const elapsedYears = Math.max(Math.min(chartAge, isaEndAge) - isaStartAge, 0);
+    const growYears    = Math.max(chartAge - isaEndAge, 0);
+    const retYearsFromStart = chartAge - isaStartAge;
+    const res = calcISA_FV(sam, sar, elapsedYears, isaMaturity, isaXfer, isaType, retYearsFromStart);
+    return {
+      rem: res.isaFV * Math.pow(1 + sar, growYears),   // ISA 잔여분 (미만기 부분)
+      xfr: res.totalTransferredFV                       // 전환분 그 시점까지 복리 성장
+    };
+  };
+
+  // Chart — 전환분은 대상 연금계좌 라인에 합산
   if (taxAccChartI) taxAccChartI.destroy();
   const chartLabels=[], penData=[], irpData=[], isaData=[];
-  for (let y=0; y<=years; y+=Math.max(1,Math.floor(years/20))) {
-    chartLabels.push((curAge+y)+'세');
-    penData.push(+(fvAnnuity(pm,pr,y)/10000).toFixed(2));
-    irpData.push(+(fvAnnuity(im,ir,y)/10000).toFixed(2));
-    isaData.push(+(fvAnnuity(sam,sar,y)/10000).toFixed(2));
+  const step = Math.max(1, Math.floor(years/20));
+  const penLegend = penIncIsa ? '연금저축+ISA(억)' : '연금저축(억)';
+  const irpLegend = irpIncIsa ? 'IRP+ISA(억)' : 'IRP(억)';
+  for (let y=0; y<=years; y+=step) {
+    const chartAge = curAge + y;
+    chartLabels.push(chartAge+'세');
+    const penOwn = fvWithAge(pm, pr, penStartAge, Math.min(penEndAge, chartAge), chartAge);
+    const irpOwn = fvWithAge(im, ir, irpStartAge, Math.min(irpEndAge, chartAge), chartAge);
+    const { rem: isaRem, xfr: isaXfr } = isaCalcAtAge(chartAge);
+    const penTotal = penOwn + (isaXferTarget === 'pen' ? isaXfr : 0);
+    const irpTotal = irpOwn + (isaXferTarget === 'irp' ? isaXfr : 0);
+    penData.push(+(penTotal/10000).toFixed(2));
+    irpData.push(+(irpTotal/10000).toFixed(2));
+    isaData.push(+(isaRem/10000).toFixed(2));
   }
   taxAccChartI = new Chart(document.getElementById('taxAccountChart'),{
     type:'line',
     data:{labels:chartLabels,datasets:[
-      {label:'연금저축(억)',data:penOn?penData:penData.map(()=>0),borderColor:'#4f46e5',backgroundColor:'rgba(79,70,229,.1)',fill:true,tension:.3,pointRadius:1},
-      {label:'IRP(억)',data:irpOn?irpData:irpData.map(()=>0),borderColor:'#0ea5e9',backgroundColor:'rgba(14,165,233,.08)',fill:true,tension:.3,pointRadius:1},
-      {label:'ISA(억)',data:isaOn?isaData:isaData.map(()=>0),borderColor:'#10b981',backgroundColor:'rgba(16,185,129,.08)',fill:true,tension:.3,pointRadius:1}
+      {label:penLegend,data:(penOn||penIncIsa)?penData:penData.map(()=>0),borderColor:'#4f46e5',backgroundColor:'rgba(79,70,229,.1)',fill:true,tension:.3,pointRadius:1},
+      {label:irpLegend,data:(irpOn||irpIncIsa)?irpData:irpData.map(()=>0),borderColor:'#0ea5e9',backgroundColor:'rgba(14,165,233,.08)',fill:true,tension:.3,pointRadius:1},
+      {label:'ISA 잔여(억)',data:isaOn?isaData:isaData.map(()=>0),borderColor:'#10b981',backgroundColor:'rgba(16,185,129,.08)',fill:true,tension:.3,pointRadius:1}
     ]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{font:{size:10}}}},scales:{y:{ticks:{callback:v=>v+'억',font:{size:10}},grid:{color:'#f3f4f6'}},x:{ticks:{maxTicksLimit:8,font:{size:10}},grid:{display:false}}}}
   });
+}
+
+// ═══════════════════════════════════════
+// TAB 4 → TAB 5: 현금흐름 자동 연동
+// ═══════════════════════════════════════
+let _lastTaxTotal        = 0;  // 절세계좌 합산총액 캐시 (만원)
+let _lastPensionMonthly  = 0;  // 국민연금 월 수령액 캐시 (만원)
+
+// 절세계좌 합산총액 → 은퇴 시 보유 자산 반영
+function applyCfAssetSync() {
+  if (!document.getElementById('cf-asset-sync')?.checked) return false;
+  const val     = Math.round(_lastTaxTotal);
+  const rangeEl = document.getElementById('s-asset');
+  const numEl   = document.getElementById('n-s-asset');
+  if (!rangeEl || !numEl) return false;
+  // 범위 초과 시 max 동적 확장
+  if (val > +rangeEl.max) {
+    const newMax = Math.ceil(val / 10000) * 10000;
+    rangeEl.max = newMax; numEl.max = newMax;
+  }
+  rangeEl.value = val;
+  numEl.value   = val;
+  document.getElementById('s-asset-v').textContent = Math.round(val).toLocaleString()+'만원';
+  const d = document.getElementById('cf-asset-sync-val');
+  if (d) d.textContent = fmtM(val);
+  return true;
+}
+
+// 국민연금 월 수령액 → 월 연금 수령액 반영
+function applyCfPensionSync() {
+  if (!document.getElementById('cf-pension-sync')?.checked) return false;
+  const val     = Math.round(_lastPensionMonthly);
+  const rangeEl = document.getElementById('s-pension');
+  const numEl   = document.getElementById('n-s-pension');
+  if (!rangeEl || !numEl) return false;
+  if (val > +rangeEl.max) {
+    const newMax = Math.ceil(val / 50) * 50;
+    rangeEl.max = newMax; numEl.max = newMax;
+  }
+  rangeEl.value = val;
+  numEl.value   = val;
+  document.getElementById('s-pension-v').textContent = Math.round(val).toLocaleString()+'만원';
+  const d = document.getElementById('cf-pension-sync-val');
+  if (d) d.textContent = Math.round(val).toLocaleString()+'만원';
+  return true;
+}
+
+// 연동 토글 (체크박스 변경 시 호출)
+function toggleCfSync(type) {
+  if (type === 'asset') {
+    const on = document.getElementById('cf-asset-sync').checked;
+    document.getElementById('s-asset').classList.toggle('cf-linked', on);
+    document.getElementById('n-s-asset').classList.toggle('cf-linked', on);
+    applyCfAssetSync();
+  } else {
+    const on = document.getElementById('cf-pension-sync').checked;
+    document.getElementById('s-pension').classList.toggle('cf-linked', on);
+    document.getElementById('n-s-pension').classList.toggle('cf-linked', on);
+    applyCfPensionSync();
+  }
+  updateCashflow();
 }
 
 // ═══════════════════════════════════════
@@ -1702,6 +2035,7 @@ window.onload = () => {
   toggleAccCard('acc-pension','on-pension','pen-body');
   toggleAccCard('acc-irp','on-irp','irp-body');
   toggleAccCard('acc-isa','on-isa','isa-body');
+  toggleIsaXferTarget(); // ISA 전환 대상 선택 표시 초기화
   // 공통 값 초기 동기화
   propagate('monthly', document.getElementById('c-monthly').value);
   propagate('curAge', document.getElementById('c-cur-age').value);
@@ -1717,10 +2051,12 @@ window.onload = () => {
     if(ea) ea.value = _ra;
   });
   updateCalc();
-  updatePension();
+  updatePension();   // → _lastPensionMonthly 캐시 + applyCfPensionSync()
   updatePortfolio();
-  updateTaxAccount();
-  updateCashflow();
+  updateTaxAccount(); // → _lastTaxTotal 캐시 + applyCfAssetSync()
+  // 연동 UI 초기 상태 적용 (cf-linked 클래스)
+  toggleCfSync('asset');
+  toggleCfSync('pension');
 };
 </script>
 </body>
